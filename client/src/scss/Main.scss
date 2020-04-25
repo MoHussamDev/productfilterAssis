@@ -1,0 +1,43 @@
+// This is the single file output by sass. It is intended to ONLY @import other files.
+@import "./boot/bootstrap.scss";
+@import "./tools/fonts";
+@import "./tools/vars";
+@import "./tools/mainSite";
+@import "./tools/fontsize";
+
+// Sections
+@import "./sections/_header";
+@import "./sections/_Home";
+@import "./sections/_jobfeed";
+@import "./sections/_searchfilter";
+@import "./sections/_login";
+@import "./sections/_inputs";
+@import "./sections/_register";
+@import "./sections/_profile";
+@import "./sections/_form";
+@import "./sections/_preLoader";
+@import "./sections/_slider";
+
+
+.textSearch{
+   width:100%;
+   display:flex;
+height: 4rem;
+background-color: white;
+padding-left:1rem;
+padding-right:1rem;
+       .textInput{
+           width:70%;
+           height: 30px;
+           border:1px solid $m-sky-color;
+        }
+        input[type=submit]{
+            width:30%;
+            height: 30px;
+            background-color: $m-sky-color;
+            border:0;
+            color: white;
+            @include font-size(12);
+        }
+}
+

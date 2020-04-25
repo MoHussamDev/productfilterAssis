@@ -1,0 +1,39 @@
+@import "./sections/homeSections/_home-cat";
+
+#topimage {
+  @extend .container-fluid !optional;
+  background-size: cover;
+  height: 70px;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  &:after {
+    content: "";
+    height: 70px;
+    background-color: rgba(#212121, 0.9);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .m-topsite-contatiner {
+    @extend .container !optional;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    h1 {
+      color: white;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}
+#home {
+  @extend .container-fluid !optional;
+  .m-home-container {
+    @extend .container !optional;
+    display: flex;
+    padding-top: 2rem;
+  }
+}

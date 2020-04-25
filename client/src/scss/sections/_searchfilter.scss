@@ -1,0 +1,158 @@
+#searchfilter {
+  .m-search-filter-container {
+    background-color: white;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: auto;
+    padding: 1rem 1rem;
+    &__header {
+      min-height: 2rem;
+      border-bottom: 1px solid rgba(#f9f9f9, 0.8);
+      span {
+        @include font-size(14);
+        color: $m-Black-flat;
+        padding-left: 0.5rem !important;
+        font-weight: 600;
+      }
+      svg {
+        @include font-size(13);
+        color: $m-Black-flat;
+      }
+    }
+    &__body {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    &__group {
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      &.group-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include font-size(13);
+        font-weight: 500;
+        color: $m-Black-flat;
+        cursor: pointer;
+
+        svg {
+          @include font-size(10);
+        }
+      }
+      &.slideDown {
+        padding-top: 1rem;
+        .react-slidedown {
+          // margin-top:0.5rem;
+          // margin-bottom:0 !important;
+          .input-radio {
+            .radio-container {
+              display: inline-block;
+              position: relative;
+              cursor: pointer;
+              line-height: 10px;
+              @include font-size(14);
+              color: $m-Black-flat;
+              user-select: none;
+              padding-left: 20px;
+              input {
+                display: none;
+              }
+              .circle {
+                position: absolute;
+                top: -2.5px;
+                left: 0;
+                height: 15px;
+                width: 15px;
+                border-radius: 100%;
+                background-color: #eee;
+              }
+
+              input[radio],
+              :checked {
+                ~ .circle {
+                  background-color: $m-sky-color;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  &:after {
+                    content: "";
+                    height: 8px;
+                    width: 8px;
+                    background-color: white;
+                    position: absolute;
+                    border-radius: 100%;
+                  }
+                }
+              }
+
+              &:hover {
+                .circle {
+                  background-color: #ccc;
+                }
+              }
+            }
+          }
+          .input {
+            min-height: 1.5rem;
+            label {
+              &.checkbox-container {
+                padding-top: 0.2rem;
+                @include font-size(14);
+                line-height: 10px;
+                display: block;
+                position: relative;
+                padding-left: 20px;
+                color: $m-Black-flat;
+                cursor: pointer;
+                user-select: none;
+              }
+              input {
+                position: absolute;
+                opacity: 0 !important;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+
+              input[checkbox],
+              :checked {
+                ~ .checkmark {
+                  background-color: $m-sky-color;
+                  &:after {
+                    display: block;
+                    left: 5px;
+                    top: 2.5px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                  }
+                }
+              }
+              .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 15px;
+                width: 15px;
+                background-color: #eee;
+                &:after {
+                  content: "";
+                  position: absolute;
+                  display: none;
+                }
+              }
+              &:hover {
+                .checkmark {
+                  background-color: #ccc;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

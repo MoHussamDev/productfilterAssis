@@ -1,0 +1,173 @@
+.loadMoreSection {
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    background-color: $m-sky-color;
+    width: 8rem;
+    height: 2rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    cursor: pointer;
+    border: 0;
+    &:disabled {
+      background-color: rgba(#d3d3d3, 0.8);
+      cursor: unset;
+    }
+  }
+}
+#jobFeed {
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: auto;
+  position: relative;
+
+  .loader {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 100000;
+    justify-content: center;
+    align-items: flex-start;
+    display: none;
+
+    &.show {
+      display: flex;
+    }
+  }
+  .m-jobfeed-header {
+    padding: 0 1.3rem;
+    min-height: 2rem;
+    border-bottom: 1px solid rgba(#f9f9f9, 0.8);
+    span {
+      @include font-size(10);
+      color: $m-Black-flat;
+    }
+  }
+  .m-job-card {
+    padding: 0 1.3rem;
+    height: 4rem;
+    display: flex;
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(#f9f9f9, 0.8);
+    }
+    margin-bottom: 0.5rem !important;
+
+    &__left {
+      height: inherit;
+      width: 80%;
+      .header {
+        display: Flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        h5 {
+          text-transform: capitalize;
+          @include font-size(10);
+          font-weight: 400;
+          line-height: 40%;
+          &.offer-avail {
+            color: rgba(green, 0.6);
+          }
+          &.offer-not-avail {
+            color: rgba(red, 0.6);
+          }
+        }
+        h3 {
+          letter-spacing: -0.2px;
+          color: $m-Black;
+          @include font-size(16);
+          font-weight: 400;
+          text-transform: capitalize;
+          line-height: 60%;
+        }
+      }
+      h6 {
+        text-transform: capitalize;
+        @include font-size(10);
+        font-weight: 400;
+        line-height: 40%;
+        color: rgba($m-Black, 0.6);
+      }
+      .body {
+        height: 30%;
+        p {
+          @include font-size(10);
+          width: 90%;
+          color: rgba($m-Black, 0.8);
+          font-weight: 400;
+        }
+      }
+      .footer {
+        ul {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: space-between;
+          list-style: none;
+          width: 60%;
+          height: 25%;
+          color: rgba($m-Black, 0.3);
+
+          li {
+            width: auto;
+            @include font-size(9.5);
+            font-weight: 700;
+
+            span {
+              margin-left: 0.2rem !important;
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      a {
+        width: 7rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba($m-Black, 0.1);
+        @include font-size(13);
+        text-decoration: none;
+      }
+      .fixedprice {
+        svg {
+          @include font-size(10);
+        }
+        span {
+          .symbol {
+            @include font-size(10);
+          }
+        }
+      }
+      .subPrice {
+        display: flex;
+        color: rgba(red, 0.8);
+        .instead {
+          @include font-size(10);
+        }
+        .Price {
+          @include font-size(10);
+          margin-left: 0.3rem !important;
+        }
+      }
+    }
+  }
+}

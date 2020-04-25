@@ -1,0 +1,18 @@
+.loaderBackground {
+  background-color: white;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 10;
+  visibility: visible;
+  transition: all 1s ease;
+
+  &.unload {
+    visibility: hidden;
+  }
+}

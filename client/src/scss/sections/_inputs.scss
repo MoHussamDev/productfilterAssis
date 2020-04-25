@@ -1,0 +1,134 @@
+.inputgroup {
+  font-family: "cairo" !important;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  &.inputError {
+    .input-head {
+      .errorMsg {
+        visibility: visible;
+      }
+    }
+    .input-control {
+      .icon {
+        border: 1px solid rgba(red, 0.5);
+        color: rgba(red, 0.7);
+      }
+      input {
+        border: 1px solid rgba(red, 0.5);
+        border-right: none;
+      }
+      input::placeholder {
+        text-transform: capitalize;
+        @include font-size(14);
+        color: red;
+      }
+      input:focus {
+        border: 1px solid rgba(red, 0.5);
+        box-shadow: 0px 0px 2px 0px rgba(red, 0.5);
+        border-right: none;
+      }
+      .errorMsg {
+        visibility: visible !important;
+      }
+      select {
+        border: 1px solid rgba(red, 0.5);
+        color: red;
+      }
+      select:focus {
+        border: 1px solid rgba(red, 0.5);
+        box-shadow: 0px 0px 2px 0px rgba(red, 0.5);
+      }
+    }
+  }
+  .input-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .errorMsg {
+      visibility: hidden;
+      height: auto;
+      @include font-size(10);
+      color: red;
+      padding-bottom: 0.5rem;
+    }
+    label {
+      text-transform: capitalize;
+      @include font-size(14);
+      color: rgba($m-Black-flat, 0.8);
+      font-weight: 500;
+    }
+  }
+  .input-control {
+    display: flex;
+
+    &.profile {
+      flex-direction: column;
+      margin-bottom: 1rem;
+      input {
+        border-right: 1px solid rgba($m-Black-flat, 0.5);
+        border-radius: 2px !important;
+      }
+      input:focus {
+        border-right: 1px solid rgba($m-Black-flat, 0.5);
+      }
+      select:focus {
+        border-right: 1px solid rgba($m-Black-flat, 0.5) !important;
+      }
+      .errorMsg {
+        visibility: hidden;
+        height: auto;
+        @include font-size(10);
+        color: red;
+        padding-bottom: 0.5rem;
+      }
+    }
+    .icon {
+      color: rgba($m-Black-flat, 0.5);
+      min-width: 50px;
+      border: 1px solid rgba($m-Black-flat, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      border-radius: 2px 0 0 px;
+      background-color: white;
+    }
+    input {
+      width: 100%;
+      outline: none;
+      height: 35px;
+      border-radius: 0 2px 2px 0;
+      border: 1px solid rgba($m-Black-flat, 0.5);
+      padding-right: 0.4rem;
+      @include font-size(14);
+      border-right: none;
+    }
+    input::placeholder {
+      text-transform: capitalize;
+      @include font-size(14);
+    }
+
+    input:focus {
+      border: 1px solid rgba($m-Black-flat, 0.5);
+      box-shadow: 0px 0px 2px 0px rgba($m-Black-flat, 0.5);
+      border-right: none;
+    }
+    select {
+      height: 35px;
+      overflow: scroll;
+      max-height: 5rem !important;
+      width: 100%;
+      @include font-size(13);
+      color: rgba($m-Black, 0.8);
+    }
+    select:focus {
+      border: 1px solid rgba($m-Black-flat, 0.5);
+      box-shadow: 0px 0px 2px 0px rgba($m-Black-flat, 0.5);
+      outline: none;
+    }
+  }
+}
