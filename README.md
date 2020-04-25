@@ -8,8 +8,9 @@ And Download A version that comppatible With Your system
 
 # This Project uses concurrently 
 so you have to install it open Your Bash and type 
+```shell
 npm install -g concurrently 
-
+```
 # This Project Uses Nodejs 
 So You have To visit https://nodejs.org/en/
 And Download The Latest Stable Version of nodejs 
