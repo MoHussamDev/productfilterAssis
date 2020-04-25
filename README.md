@@ -11,6 +11,14 @@ so you have to install it open Your Bash and type
 ```shell
 npm install -g concurrently 
 ```
+# This Project Uses Yarn 
+for Better Installation Enviroment I Prefer You use Yarn when Installing Reactjs Dependencies 
+so visit official site for instructions https://yarnpkg.com/getting-started/install
+or 
+```shell
+npm install -g yarn
+```
+
 # This Project Uses Nodejs 
 So You have To visit https://nodejs.org/en/
 And Download The Latest Stable Version of nodejs 
@@ -24,8 +32,9 @@ And Download The Latest Stable Version of nodejs
 $ npm install 
 ```
 + after installing the Server cd to ./client and type
+
 ```shell
-$ npm install 
+$ yarn
 ```
 + go back to repo by type cd ../
 
