@@ -33,7 +33,7 @@ $ npm install
 ```shell
 $ npm run dev 
 ```
-+ The DataBase Will Seed it Self  if For The First Time You Have Troubles try to quite the dev by click ctrl + c and lunch it again 
++ The DataBase Will Seed it Self  if For The First Time You Have Troubles try to quite the dev by clicking ctrl + c and lunch it again
 
 + to run only the React client 
 ```shell
