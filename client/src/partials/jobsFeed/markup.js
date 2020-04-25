@@ -6,7 +6,7 @@ const Markup = ({ products, size, filterPromotion, load }) => {
   return (
     <div id="jobFeed">
       <div className={`loader ${load ? "show" : ""}`}>
-        <ReactLoading type="balls" color="#7ed6df" />:
+        <ReactLoading type="balls" color="#7ed6df" />
       </div>
       <div className="m-jobfeed-header">
         <span>{size} Product Found</span>

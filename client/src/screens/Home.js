@@ -82,7 +82,7 @@ const Home = () => {
       setShow(false);
     }, 500);
   };
-  console.log(filters);
+
   return render ? (
     <Fragment>
       <div className="container" style={{ paddingTop: "50px" }}>
