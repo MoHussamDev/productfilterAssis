@@ -9,11 +9,13 @@ import { LoaderContext } from "../helpers/loaderContext";
 import Searchfilter from "../partials/searchfilter";
 import apiClient from "../network/apiClient";
 import JobFeed from "../partials/jobsFeed";
-import TextSearch from '../partials/textSearch'
+import TextSearch from "../partials/textSearch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [filters, setFilters] = useState({
-    filters: { name:'',department_id: [], promotions_id: [] },
+    filters: { name: "", department_id: [], promotions_id: [] },
   });
   const [products, setProducts] = useState([]);
   const [size, setSize] = useState([]);
@@ -24,14 +26,14 @@ const Home = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-      let ignore = false
-           if(!ignore){
+    let ignore = false;
+    if (!ignore) {
+      getData();
+    }
 
-               getData();
-             }
-
-    return ()=>{ignore = true}
-
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   useLayoutEffect(() => {
@@ -88,8 +90,21 @@ const Home = () => {
       <div className="container" style={{ paddingTop: "50px" }}>
         <div className="row">
           <div className="col-md-3">
-              <TextSearch filterHandler={(filters, filterby) =>
-                handleFilters(filters, filterby)} />
+            <section id="searchfilter">
+              <div className="m-search-filter-container">
+                <div className="m-search-filter-container__header">
+                  <FontAwesomeIcon icon={faSearch} />
+                  <span>Search For Product </span>
+                </div>
+                <div className="m-search-filter-container__body">
+                  <TextSearch
+                    filterHandler={(filters, filterby) =>
+                      handleFilters(filters, filterby)
+                    }
+                  />
+                </div>
+              </div>
+            </section>
             <Searchfilter
               filterHandler={(filters, filterby) =>
                 handleFilters(filters, filterby)

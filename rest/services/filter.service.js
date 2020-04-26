@@ -15,7 +15,17 @@ exports.allDepartments = async (req,res)=>{
 exports.allPromotions = async (req,res)=>{
         var allProductPromotions = await Product.find().distinct('promotions_id')
         var allPromotions = await Promotions.find().where('_id').in(allProductPromotions)
-        res.status(200).send({err:false,data:allPromotions,haw:'asd'})
+        var newPromotions = [
+            { active: true,
+                products_id:[],
+                _id: "",
+                 code: 'Any',
+                 discount: '',
+               },
+               ...allPromotions
+        ]
+        console.log(newPromotions)
+        res.status(200).send({err:false,data:newPromotions,haw:'asd'})
     }
 
 exports.listProducts = async (req,res)=>{

@@ -7,7 +7,7 @@ const TextSearch = ({filterHandler}) => {
         filterHandler(search,'name')
     }
     return (
-        <form className="textSearch" onSubmit={handleForm}>
+        <form className="textSearch noPadding noHeight" onSubmit={handleForm}>
         <input className="textInput" value={search} onChange={(e)=>setSearch(e.target.value)} type="text" name="search" />
         <input type="submit" value=" Search"/>            
         </form>

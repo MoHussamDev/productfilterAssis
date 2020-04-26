@@ -4,7 +4,7 @@ import DropdownGroup from "./dropdownGroup/index";
 import apiClinet from "../../network/apiClient";
 import { CheckerContext } from "../../helpers/checkerContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 const Searchfilter = ({ filterHandler }) => {
   const [checkedDeparts, setCheckedDeparts] = useState([]);
@@ -47,7 +47,7 @@ const Searchfilter = ({ filterHandler }) => {
     <section id="searchfilter">
       <div className="m-search-filter-container">
         <div className="m-search-filter-container__header">
-          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faFilter} />
           <span>Filter Products's</span>
         </div>
         <div className="m-search-filter-container__body">
@@ -74,7 +74,20 @@ const Searchfilter = ({ filterHandler }) => {
           >
             <Markup
               DropdownGroup={DropdownGroup}
-              name="Promotions"
+              name="Active Promotions"
+              choices={Promo}
+            />
+          </CheckerContext.Provider>
+          <CheckerContext.Provider
+            value={{
+              handler: handlePromotions,
+              state: checkedPromotions,
+              type: "textSelect",
+            }}
+          >
+            <Markup
+              DropdownGroup={DropdownGroup}
+              name="Search For Promo Code"
               choices={Promo}
             />
           </CheckerContext.Provider>
